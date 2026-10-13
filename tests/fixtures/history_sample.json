@@ -1,0 +1,31 @@
+{
+ "result": "OK",
+ "data": {
+  "graph_data": [
+   {
+    "datetime": "2026-09-20 09:50",
+    "value": 0.43,
+    "value_out": null,
+    "discharge": null
+   },
+   {
+    "datetime": "2026-09-20 10:00",
+    "value": 0.48,
+    "value_out": null,
+    "discharge": null
+   },
+   {
+    "datetime": "2026-09-20 10:20",
+    "value": 0.64,
+    "value_out": null,
+    "discharge": null
+   },
+   {
+    "datetime": "2026-10-13 10:00",
+    "value": null,
+    "value_out": null,
+    "discharge": null
+   }
+  ]
+ }
+}

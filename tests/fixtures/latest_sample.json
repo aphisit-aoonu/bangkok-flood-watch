@@ -1,0 +1,174 @@
+{
+ "waterlevel_data": {
+  "result": "OK",
+  "data": [
+   {
+    "id": 1323730755,
+    "waterlevel_datetime": "2026-10-13 09:30",
+    "waterlevel_m": null,
+    "waterlevel_msl": "1.60",
+    "waterlevel_msl_previous": "1.77",
+    "flow_rate": null,
+    "discharge": null,
+    "storage_percent": "127.42",
+    "sort_order": null,
+    "station_type": "tele_waterlevel",
+    "situation_level": 5,
+    "agency": {
+     "id": 9,
+     "agency_name": {
+      "th": "สถาบันสารสนเทศทรัพยากรน้ำ (องค์การมหาชน)",
+      "en": "Hydro – Informatics Institute (Public Organization)",
+      "jp": ""
+     },
+     "agency_shortname": {
+      "th": "สสน.",
+      "en": "HII",
+      "jp": ""
+     }
+    },
+    "basin": {
+     "id": 10,
+     "basin_code": 10,
+     "basin_name": {
+      "th": "ลุ่มน้ำเจ้าพระยา",
+      "en": "Chao Phraya Basin"
+     }
+    },
+    "station": {
+     "id": 575568,
+     "tele_station_name": {
+      "en": "Khlong Lat Bang Yo 2 Gate",
+      "th": "ปตร. คลองลัดบางยอ 2"
+     },
+     "tele_station_lat": 13.661021,
+     "tele_station_long": 100.56727,
+     "tele_station_oldcode": "BKC004",
+     "tele_station_type": "tele_waterlevel",
+     "left_bank": 1.49,
+     "right_bank": 0.905,
+     "min_bank": 0.91,
+     "ground_level": -1.63,
+     "offset": null,
+     "sub_basin_id": 240,
+     "agency_id": 9,
+     "geocode_id": 252,
+     "hydro_id": null,
+     "qmax": null,
+     "is_key_station": false,
+     "warning_level_m": null,
+     "critical_level_m": null,
+     "critical_level_msl": null
+    },
+    "geocode": {
+     "area_code": "2",
+     "area_name": {
+      "th": "ภาคกลาง",
+      "en": "Central"
+     },
+     "amphoe_code": "04",
+     "amphoe_name": {
+      "th": "พระประแดง",
+      "en": "Phra Pradaeng District"
+     },
+     "tumbon_code": "11",
+     "tumbon_name": {
+      "th": "บางกระสอบ",
+      "en": "Bang Krasop"
+     },
+     "province_code": "11",
+     "province_name": {
+      "th": "สมุทรปราการ",
+      "en": "Samut Prakan"
+     }
+    },
+    "diff_wl_bank": "0.70",
+    "diff_wl_bank_text": "ล้นตลิ่ง (ม.)",
+    "river_gid": 188375,
+    "river_name": "แม่น้ำเจ้าพระยา"
+   },
+   {
+    "id": 1323697687,
+    "waterlevel_datetime": "2026-10-13 08:00",
+    "waterlevel_m": null,
+    "waterlevel_msl": null,
+    "waterlevel_msl_previous": "5.15",
+    "flow_rate": null,
+    "discharge": null,
+    "storage_percent": "125.62",
+    "sort_order": null,
+    "station_type": "tele_waterlevel",
+    "situation_level": 5,
+    "agency": {
+     "id": 12,
+     "agency_name": {
+      "th": "กรมชลประทาน ",
+      "en": "Royal Irrigation Department",
+      "jp": ""
+     },
+     "agency_shortname": {
+      "th": "ชป.",
+      "en": "RID",
+      "jp": ""
+     }
+    },
+    "basin": {
+     "id": 10,
+     "basin_code": 10,
+     "basin_name": {
+      "th": "ลุ่มน้ำเจ้าพระยา",
+      "en": "Chao Phraya Basin"
+     }
+    },
+    "station": {
+     "id": 1095849,
+     "tele_station_name": {
+      "th": "สะพานหัวเวียง"
+     },
+     "tele_station_lat": 14.36851,
+     "tele_station_long": 100.414391,
+     "tele_station_oldcode": "C.67",
+     "tele_station_type": "tele_waterlevel",
+     "left_bank": 6.576,
+     "right_bank": 6.698,
+     "min_bank": 2.75,
+     "ground_level": -6.58,
+     "offset": null,
+     "sub_basin_id": 240,
+     "agency_id": 12,
+     "geocode_id": 570,
+     "hydro_id": 5,
+     "qmax": null,
+     "is_key_station": false,
+     "warning_level_m": null,
+     "critical_level_m": null,
+     "critical_level_msl": null
+    },
+    "geocode": {
+     "area_code": "2",
+     "area_name": {
+      "th": "ภาคกลาง",
+      "en": "Central"
+     },
+     "amphoe_code": "12",
+     "amphoe_name": {
+      "th": "เสนา",
+      "en": "Sena District"
+     },
+     "tumbon_code": "06",
+     "tumbon_name": {
+      "th": "หัวเวียง",
+      "en": "Hua Wiang"
+     },
+     "province_code": "14",
+     "province_name": {
+      "th": "พระนครศรีอยุธยา",
+      "en": "Phra Nakhon Si Ayutthaya"
+     }
+    },
+    "diff_wl_bank": "2.39",
+    "diff_wl_bank_text": "ล้นตลิ่ง (ม.)"
+   }
+  ]
+ }
+}

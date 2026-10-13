@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bangkok Flood Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 34 34" aria-hidden="true">
+      <rect width="34" height="34" rx="10" fill="#0b6bcb"/>
+      <path d="M17 7c-4 5-7 8.6-7 12.2A7 7 0 0 0 24 19.2C24 15.6 21 12 17 7z" fill="#fff"/>
+      <path d="M11.5 21.5c1.6 1 3.2 1 4.8 0s3.2-1 4.8 0" stroke="#0b6bcb" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1 data-t="title"></h1>
+      <p class="sub" data-t="subtitle"></p>
+    </div>
+  </div>
+  <div class="top-right">
+    <span class="updated" id="updated"></span>
+    <button class="lang" id="lang" type="button">EN</button>
+  </div>
+</header>
+
+<main class="layout">
+  <aside class="panel">
+    <section class="stats" id="stats"></section>
+
+    <section class="accuracy">
+      <h2 data-t="accTitle"></h2>
+      <p class="muted" data-t="accNote"></p>
+      <div class="acc-rows" id="acc"></div>
+    </section>
+
+    <section class="list-wrap">
+      <div class="list-head">
+        <h2 data-t="listTitle"></h2>
+        <div class="filters" id="filters"></div>
+      </div>
+      <ol class="list" id="list"></ol>
+    </section>
+  </aside>
+
+  <section class="map-wrap">
+    <div id="map"></div>
+    <article class="detail" id="detail" hidden></article>
+    <div class="legend" id="legend"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span data-t="source"></span>
+  <span data-t="warning"></span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
