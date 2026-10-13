@@ -93,6 +93,11 @@ tests/
 - These are estimates. Don't use them to decide whether to drive through water.
   Always follow official announcements.
 - Some gauges have no bank height on record. For those the page shows the trend only.
+- The two camera pictures are the Bhumibol and Sirikit dams, upstream of the Chao Phraya. The page
+  loads them straight from [EGAT's water site](https://egatwater.egat.co.th/); nothing is copied or
+  stored here. I wanted a camera next to every gauge, but could not find one that is both working
+  and open to show: of the 106 cameras ThaiWater lists, only 8 dam cameras still answered, and
+  Bangkok's traffic cameras can only be viewed on the city's own site.
 
 ## Author
 

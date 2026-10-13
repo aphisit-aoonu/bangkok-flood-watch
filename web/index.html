@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="top">
@@ -38,6 +38,12 @@
       <div class="acc-rows" id="acc"></div>
     </section>
 
+    <section class="cams">
+      <h2 data-t="camTitle"></h2>
+      <p class="muted" data-t="camNote"></p>
+      <div class="cam-grid" id="cams"></div>
+    </section>
+
     <section class="list-wrap">
       <div class="list-head">
         <h2 data-t="listTitle"></h2>
@@ -60,6 +66,6 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

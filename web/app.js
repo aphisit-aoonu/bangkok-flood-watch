@@ -18,9 +18,12 @@ const TEXT = {
     willOverflow: h => `คาดว่าน้ำจะถึงตลิ่งภายใน ${h} ชม. ถ้าแนวโน้มยังเป็นแบบนี้`,
     isOver: cm => `ตอนนี้น้ำสูงกว่าตลิ่ง ${cm} ซม.`,
     falling: "น้ำกำลังลด",
-    source: "ข้อมูล: สถาบันสารสนเทศทรัพยากรน้ำ (สสน.) · ThaiWater",
+    source: "ข้อมูล: สถาบันสารสนเทศทรัพยากรน้ำ (สสน.) · ThaiWater · ภาพกล้องเขื่อน: กฟผ.",
     warning: "เป็นการประมาณ ห้ามใช้แทนประกาศของทางการ",
     reading: "วัดเมื่อ",
+    camTitle: "เขื่อนต้นน้ำ · ภาพสด",
+    camNote: "น้ำที่ปล่อยจากสองเขื่อนนี้ไหลลงเจ้าพระยา · ภาพจากกล้องของ กฟผ. โหลดตรงจากเว็บ กฟผ.",
+    dams: { BB: "เขื่อนภูมิพล · ตาก", SK: "เขื่อนสิริกิติ์ · อุตรดิตถ์" },
   },
   en: {
     title: "Bangkok Flood Watch",
@@ -41,16 +44,25 @@ const TEXT = {
     willOverflow: h => `Likely to reach the bank within ${h} h if the trend holds`,
     isOver: cm => `Water is ${cm} cm above the bank right now`,
     falling: "Water is going down",
-    source: "Data: Hydro-Informatics Institute (HII) · ThaiWater",
+    source: "Data: Hydro-Informatics Institute (HII) · ThaiWater · Dam cameras: EGAT",
     warning: "Estimates only. Always follow official announcements.",
     reading: "Measured",
+    camTitle: "Upstream dams · live",
+    camNote: "Water released from these two dams flows down the Chao Phraya. Camera images are loaded straight from EGAT's site.",
+    dams: { BB: "Bhumibol Dam · Tak", SK: "Sirikit Dam · Uttaradit" },
   },
 };
+// Still images EGAT publishes for its dam cameras; refreshed on their side every few minutes.
+const CAM_URL = code => `https://egatwater.egat.co.th/assets/CCTV/images/${code}/1.jpg`;
+const CAM_SITE = "https://egatwater.egat.co.th/";
+const CAM_REFRESH_MS = 5 * 60e3;
 const COLORS = { over: "--over", near: "--near", rising: "--rising", normal: "--normal", stale: "--stale" };
 const ORDER = { over: 0, near: 1, rising: 2, normal: 3, stale: 4 };
 
 let lang = "th";
 try { lang = localStorage.getItem("floodwatch-lang") || "th"; } catch (e) {}
+const urlLang = new URLSearchParams(location.search).get("lang");
+if (urlLang === "th" || urlLang === "en") lang = urlLang;
 let data = null, accuracy = null, filter = "all", selected = null, map, markers = {};
 
 const $ = id => document.getElementById(id);
@@ -103,6 +115,17 @@ function renderAccuracy() {
       <span><i style="background:${css("--stale")};opacity:.55"></i>${t("accBase")} ${accuracy.rows.at(-1).baseline_cm} ${t("cm")}</span>
       <span><i style="background:${css("--accent")}"></i>${t("accOurs")} ${accuracy.rows.at(-1).ours_cm} ${t("cm")}</span>
     </div>`;
+}
+
+function renderCams() {
+  const stamp = Math.floor(Date.now() / CAM_REFRESH_MS);
+  $("cams").innerHTML = Object.entries(t("dams")).map(([code, label]) => `
+    <a class="cam" href="${CAM_SITE}" target="_blank" rel="noopener">
+      <img src="${CAM_URL(code)}?t=${stamp}" alt="${label}">
+      <span>${label}</span>
+    </a>`).join("");
+  // a camera that is down should disappear, not leave a broken picture
+  $("cams").querySelectorAll("img").forEach(img => (img.onerror = () => img.closest(".cam").remove()));
 }
 
 function renderFilters() {
@@ -219,7 +242,7 @@ function setFilter(f) {
 }
 
 function renderAll() {
-  applyText(); renderStats(); renderAccuracy(); renderFilters(); renderList(); renderMarkers(); renderLegend(); renderDetail();
+  applyText(); renderStats(); renderAccuracy(); renderCams(); renderFilters(); renderList(); renderMarkers(); renderLegend(); renderDetail();
 }
 
 $("lang").onclick = () => {
@@ -243,5 +266,6 @@ async function init() {
   if (params.get("station")) selected = +params.get("station");
   renderAll();
   map.fitBounds(L.latLngBounds(data.stations.map(s => [s.lat, s.lon])), { padding: [30, 30] });
+  setInterval(renderCams, CAM_REFRESH_MS);
 }
 init();
